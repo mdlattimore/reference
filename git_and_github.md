@@ -1,6 +1,6 @@
 # Git and GitHub
 
-[Back to Table of Contents](./contents.md)
+[Back to Table of Contents](./index.md)
 
 Initialize a new git repository within the active folder or, if using virtualenv, within that virtualenv. Create a .gitignore file in the directory to specify what files should not be tracked:  
 
