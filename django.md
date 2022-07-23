@@ -24,6 +24,14 @@ First, register the app in django_project/settings.py
 
 Run ```python3 manage.py runserver``` to make sure everything is working.
 
+Create superuser account to use with Django Admin  
+
+    python3 manage.py createsuperuser
+    # Then follow prompts
+
+
+### Set Up Models
+
 Next, set up your Database Models. This is an example with a blog app called blog:  
 
     # blog/models.py
@@ -46,16 +54,6 @@ Next, set up your Database Models. This is an example with a blog app called blo
         # Admin dashboard. "post_detail" is the name of a view to be
         # created that will display content from the posts.  
 
-After the model is finished, migrate changes to take effect:
-
-    python3 manage.py makemigrations <<app>>
-    python3 manage.py migrate
-
-Create superuser account to use with Django Admin  
-
-    python3 manage.py createsuperuser
-    # Then follow prompts
-
 Then we have to register the model with Admin in order for it to appear in dashboard. Working in  <<app>>/admin.py  
 
     # <<app>>/admin.py
@@ -63,5 +61,12 @@ Then we have to register the model with Admin in order for it to appear in dashb
     from .models import <<Name of model Class>>
     
     admin.site.register(<<Name of model Class)
+
+After the model is finished, migrate changes to take effect:
+
+    python3 manage.py makemigrations <<app>>
+    python3 manage.py migrate
+
+## Set Up urls
 
 Set up urls. This must be done in two places. The project/urls.py file and the app/urls.py (which you must create) 
